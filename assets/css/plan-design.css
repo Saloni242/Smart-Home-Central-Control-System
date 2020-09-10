@@ -1,0 +1,120 @@
+@import "bourbon";
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  @include display(flex);
+  @include align-content(center);
+  color: #353535;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+.container{
+  
+  background-color: white;
+  margin-top: 21px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap{  
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto 30px auto;
+    &:last-child {
+      margin-bottom: 0;
+  }
+}
+
+.clicker{
+    background-color: white;
+    outline: none;  
+    font-weight: 600;
+    position:absolute;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    height: 64px;
+    width: 64px;
+    left: 8px;
+    top: 8px;
+    border-radius: 27px;
+    z-index: 2;
+}
+
+.clicker:active{
+    transform: translate(0, 1px);
+    height: 63px;
+    box-shadow: 0px 1px 0 0 rgb(190,190,190) inset;
+}
+
+.circle{
+    position: relative;
+    border-radius:40px;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+}
+
+.circle.third{
+  border-radius: 0;
+}
+
+.clicker:hover + .circle, .clicker:active + .circle {
+    animation: rotator linear .8s infinite;
+}
+
+@keyframes rotator{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+   
+.angled {
+      background-image: linear-gradient(45deg, white 0%, white 30%, rgb(138, 216, 27) 30%, rgb(146, 224, 20) 70%, white 70%, white 100%);
+    }
+.square_btn {
+    display: inline-block;
+    padding: 0.4em 1em;
+    text-decoration: none;
+    color: #89d312;
+    border: solid 2px #89d312;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.square_btn:hover {
+    background: #89d312;
+    color: white;
+}
+
+
+
+bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("<?php echo base_url();?>assets/background/home.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+#head{
+  margin-top:-150px;
+  text-shadow: 2px 2px 8px grey;
+}
+ 
+ #search
+ {
+  float: right;
+margin-top: -55px;
+margin-right: 178px;
+ }
